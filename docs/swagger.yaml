@@ -1,0 +1,237 @@
+basePath: /
+definitions:
+  web.RekeningCreateRequest:
+    properties:
+      kode_rekening:
+        type: string
+      nama_rekening:
+        type: string
+      tahun:
+        type: string
+    required:
+    - kode_rekening
+    - nama_rekening
+    - tahun
+    type: object
+  web.RekeningResponse:
+    properties:
+      id:
+        type: integer
+      kode_rekening:
+        type: string
+      nama_rekening:
+        type: string
+      tahun:
+        type: string
+    type: object
+  web.RekeningUpdateRequest:
+    properties:
+      id:
+        type: integer
+      kode_rekening:
+        type: string
+      nama_rekening:
+        type: string
+      tahun:
+        type: string
+    required:
+    - id
+    - kode_rekening
+    - nama_rekening
+    - tahun
+    type: object
+  web.WebResponse:
+    description: Web Response
+    properties:
+      code:
+        type: integer
+      data: {}
+      message:
+        type: string
+      status:
+        type: string
+    type: object
+host: ${HOST}:${PORT}
+info:
+  contact:
+    email: support@swagger.io
+    name: API Support
+    url: http://www.swagger.io/support
+  description: API For Tim Kerja Services
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  termsOfService: http://swagger.io/terms/
+  title: Tim Kerja Service API
+  version: "1.0"
+paths:
+  /rekening:
+    get:
+      consumes:
+      - application/json
+      description: Get All Rekening
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/web.WebResponse'
+            - properties:
+                data:
+                  items:
+                    $ref: '#/definitions/web.RekeningResponse'
+                  type: array
+              type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/web.WebResponse'
+      summary: Get All Rekening
+      tags:
+      - Rekening
+    post:
+      consumes:
+      - application/json
+      description: Create new Rekening
+      parameters:
+      - description: Rekening Create Request
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/web.RekeningCreateRequest'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            allOf:
+            - $ref: '#/definitions/web.WebResponse'
+            - properties:
+                data:
+                  $ref: '#/definitions/web.RekeningResponse'
+              type: object
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/web.WebResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/web.WebResponse'
+      summary: Create Rekening
+      tags:
+      - Rekening
+  /rekening/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: Delete Rekening
+      parameters:
+      - description: Rekening ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/web.WebResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/web.WebResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/web.WebResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/web.WebResponse'
+      summary: Delete Rekening
+      tags:
+      - Rekening
+    get:
+      consumes:
+      - application/json
+      description: Get Rekening detail by ID
+      parameters:
+      - description: Rekening ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/web.WebResponse'
+            - properties:
+                data:
+                  $ref: '#/definitions/web.RekeningResponse'
+              type: object
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/web.WebResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/web.WebResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/web.WebResponse'
+      summary: Get Rekening by ID
+      tags:
+      - Rekening
+    put:
+      consumes:
+      - application/json
+      description: Update Rekening
+      parameters:
+      - description: Rekening ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      - description: Rekening Update Request
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/web.RekeningUpdateRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/web.WebResponse'
+            - properties:
+                data:
+                  $ref: '#/definitions/web.RekeningResponse'
+              type: object
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/web.WebResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/web.WebResponse'
+      summary: Update Rekening
+      tags:
+      - Rekening
+swagger: "2.0"
