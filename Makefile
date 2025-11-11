@@ -1,4 +1,4 @@
-APP_NAME=timkerja-service
+APP_NAME=rekeningService
 
 .PHONY: all build run env clean
 
