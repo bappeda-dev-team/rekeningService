@@ -11,9 +11,8 @@ const docTemplate = `{
         "title": "{{.Title}}",
         "termsOfService": "http://swagger.io/terms/",
         "contact": {
-            "name": "API Support",
-            "url": "http://www.swagger.io/support",
-            "email": "support@swagger.io"
+            "name": "KK-DevTeam",
+            "email": "bappedadevteam@gmail.com"
         },
         "license": {
             "name": "Apache 2.0",
@@ -380,11 +379,11 @@ const docTemplate = `{
 // SwaggerInfo holds exported Swagger Info so clients can modify it
 var SwaggerInfo = &swag.Spec{
 	Version:          "1.0",
-	Host:             "${HOST}:${PORT}",
+	Host:             "${host}:${port}",
 	BasePath:         "/",
 	Schemes:          []string{},
-	Title:            "Tim Kerja Service API",
-	Description:      "API For Tim Kerja Services",
+	Title:            "Rekening Service",
+	Description:      "API Data Master Rekening Kab Bontang",
 	InfoInstanceName: "swagger",
 	SwaggerTemplate:  docTemplate,
 	LeftDelim:        "{{",

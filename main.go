@@ -14,19 +14,18 @@ func NewServer(e *echo.Echo) *echo.Echo {
 	return e
 }
 
-// @title Tim Kerja Service API
+// @title Rekening Service
 // @version 1.0
-// @description API For Tim Kerja Services
+// @description API Data Master Rekening Kab Bontang
 // @termsOfService http://swagger.io/terms/
 
-// @contact.name API Support
-// @contact.url http://www.swagger.io/support
-// @contact.email support@swagger.io
+// @contact.name KK-DevTeam
+// @contact.email bappedadevteam@gmail.com
 
 // @license.name Apache 2.0
 // @license.url http://www.apache.org/licenses/LICENSE-2.0.html
 
-// @host ${HOST}:${PORT}
+// @host ${host}:${port}
 // @BasePath /
 
 func main() {

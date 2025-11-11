@@ -51,18 +51,17 @@ definitions:
       status:
         type: string
     type: object
-host: ${HOST}:${PORT}
+host: ${host}:${port}
 info:
   contact:
-    email: support@swagger.io
-    name: API Support
-    url: http://www.swagger.io/support
-  description: API For Tim Kerja Services
+    email: bappedadevteam@gmail.com
+    name: KK-DevTeam
+  description: API Data Master Rekening Kab Bontang
   license:
     name: Apache 2.0
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: http://swagger.io/terms/
-  title: Tim Kerja Service API
+  title: Rekening Service
   version: "1.0"
 paths:
   /rekening:
