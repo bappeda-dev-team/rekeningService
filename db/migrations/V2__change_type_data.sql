@@ -1,0 +1,1 @@
+ALTER TABLE tb_rekening MODIFY COLUMN nama_rekening TEXT;

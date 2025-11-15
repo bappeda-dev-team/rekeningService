@@ -40,7 +40,7 @@ func (service *RekeningServiceImpl) Create(ctx context.Context, request web.Reke
 
 	rekeningDomain := domain.Rekening{
 		KodeRekening: request.KodeRekening,
-		NamaRekening: request.NamaRekening,
+		NamaRekening: &request.NamaRekening,
 		Tahun:        request.Tahun,
 	}
 
@@ -81,7 +81,7 @@ func (service *RekeningServiceImpl) Update(ctx context.Context, request web.Reke
 	rekeningDomain := domain.Rekening{
 		Id:           request.Id,
 		KodeRekening: request.KodeRekening,
-		NamaRekening: request.NamaRekening,
+		NamaRekening: &request.NamaRekening,
 		Tahun:        request.Tahun,
 	}
 

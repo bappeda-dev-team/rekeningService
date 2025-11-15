@@ -51,7 +51,7 @@ definitions:
       status:
         type: string
     type: object
-host: ${host}:${port}
+host: ${PROD_HOSTNAME}
 info:
   contact:
     email: bappedadevteam@gmail.com
